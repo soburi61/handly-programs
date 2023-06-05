@@ -5,25 +5,23 @@ coding: utf-8
 """
 
 def alph2num(alphabets):
-    numbers = []
-    for alphabet in alphabets:
-        if 'A' <= alphabet <= 'Z':
-            number = ord(alphabet) - 64
-            numbers.append(number)
-        else:
-            numbers.append(0)
-    return numbers
+    result = []
+    alph_list=[chr(ord('A')+i) for i in range(26)]
+    alph_list+=[' ','?','!']
+    for alph in alphabets:
+        result.append(alph_list.index(alph))
+    return result
 
 def num2alph(numbers):
-    alphabets = ""
-    for number in numbers:
-        if 1 <= number <= 26:
-            alphabet = chr(number + 64)
-            alphabets += alphabet
-        else:
-            alphabets += " "
-    return alphabets
+    result = ""
+    alph=[chr(ord('A')+i) for i in range(26)]
+    alph+=[' ','?','!']
+    for num in numbers:
+        result+=alph[num]
+    return result
 if __name__=="__main__":
-    alph='NOMONEYY'
-    r=alph2num(alph)
+
+    r=num2alph([0,1,2,3])
+    r=alph2num('ABCDEFG ?')
     print(r)
+    
