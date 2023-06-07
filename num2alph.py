@@ -22,6 +22,6 @@ def num2alph(numbers):
 if __name__=="__main__":
 
     r=num2alph([0,1,2,3])
-    r=alph2num('ABCDEFG ?')
+    r=alph2num('CAT')
     print(r)
     
